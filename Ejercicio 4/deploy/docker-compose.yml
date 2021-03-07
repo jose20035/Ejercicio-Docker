@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+
+  moodle:
+    container_name: moodle
+    image: jose20035/moodle
+    restart: always
+    environment: 
+      DB: moodle
+      moodle_us: moodle
+      PASS: moodle
+    ports: 
+      - 80:80
+    volumes: 
+      - /VContenedores/moodle:/var/www/
+      - /VContenedores/DB_moodle:/var/lib/mysql
